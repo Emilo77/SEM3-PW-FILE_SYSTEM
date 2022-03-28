@@ -1,8 +1,4 @@
-# SEM3-PW-FILE_SYSTEM
-Conurrent file system (tree implemented)
-
-Zadanie zaliczeniowe 2: System plików
-Polecenie
+# Zadanie zaliczeniowe 2: System plików
 
 Zadanie polega na zaimplementowaniu części systemu plików, a konkretnie współbieżnej struktury danych reprezentującej drzewo folderów.
 
