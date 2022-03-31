@@ -4,7 +4,7 @@ Zadanie polega na zaimplementowaniu części systemu plików, a konkretnie wspó
 
 Ścieżki są reprezentowane napisami postaci `"/foo/bar/baz/"`.
 
-Należy zdefiniować strukturę Tree oraz następujące operacje (które będą wykonywane przez wielowątkowy program testujący):
+Należy zdefiniować strukturę `Tree` oraz następujące operacje (które będą wykonywane przez wielowątkowy program testujący):
 ```c
 Tree* tree_new()
 ```
