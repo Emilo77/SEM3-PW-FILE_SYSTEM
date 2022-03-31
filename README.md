@@ -9,7 +9,7 @@ Należy zdefiniować strukturę `Tree` oraz następujące operacje (które będ�
 Tree* tree_new()
 ```
 
-Tworzy nowe drzewo folderów z jednym, pustym folderem "/".
+Tworzy nowe drzewo folderów z jednym, pustym folderem `"/"`.
 ```c
 void tree_free(Tree*)
 ```
