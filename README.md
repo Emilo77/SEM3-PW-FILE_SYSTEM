@@ -42,7 +42,7 @@ powinny istnieć ścieżki `/b/x/c/`, `/b/x/d/`, `/b/a/d/`, `/a/` (oraz ich przo
 
 - Operacje `list`, `create`, `remove` i `move` muszą być atomowe (tzn. zwracane wartości powinny być takie jak gdyby operacje wykonały się sekwencyjnie w jakiejś kolejności).
 - Jeśli dwie operacje zostały wywołane równolegle (tj. nie jedna rozpoczęta po zakończeniu drugiej), to ich zwracane wartości mogą być takie jak gdyby wykonały się w dowolnej kolejności: jest OK jeśli wybrana kolejność prowadzi do zwrócenia kodu błędu.
-- Można zakładać, że operacja tree_free zostanie wykonana na danym drzewie dokładnie raz, po zakończeniu wszystkich innych operacji.
+- Można zakładać, że operacja `tree_free` zostanie wykonana na danym drzewie dokładnie raz, po zakończeniu wszystkich innych operacji.
 
 # HashMap
 
@@ -59,7 +59,7 @@ Należy przy tym unikać przede wszystkim zakleszczenia, ale również zagłodze
 - Ścieżki to nazwy folderów oddzielone znakiem `'/'`; zawsze zaczynają się i kończą się znakiem `'/'`; mają długość od `1` do `4095` znaków.
 - `tree_list` zwraca `NULL` jeśli ścieżka nie jest prawidłowej postaci (w powyższym sensie) lub nie istnieje.
 - Pozostałe operacje, jeśli ścieżka nie jest prawidłowej postaci, zwracają kod błędu `EINVAL` (stała zdefiniowana w `errno.h`).
-- W tree_create: jeśli folder już istnieje, zwraca kod błędu `EEXIST`. Jeśli rodzic podanej ścieżki nie istnieje, zwraca `ENOENT`.
+- W `tree_create`: jeśli folder już istnieje, zwraca kod błędu `EEXIST`. Jeśli rodzic podanej ścieżki nie istnieje, zwraca `ENOENT`.
 - W `tree_remove`: jeśli folder jest niepusty, zwraca `ENOTEMPTY`. Jeśli nie istnieje, zwaraca `ENOENT`.  Jeśli podano korzeń `"/"`, zwraca `EBUSY`.
 - W `tree_move`: jeśli folder `source` lub rodzic folderu `target` nie istnieje, zwraca `ENOENT`. Jeśli folder `target` już istnieje, zwraca kod błedu `EEXIST`. Jeśli jako source podano korzeń `"/"`, zwraca `EBUSY`.
 - Jeśli użyte funkcje `pthreads_*` zwrócą kod błędu, można go po prostu zwrócić.
